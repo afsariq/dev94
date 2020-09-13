@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="1.css"> 
+
+
+
+<script>
+
+
+
+function cardnumber(inputtxt)
+{
+	 var x = document.forms["form1"]["text2"].value;
+  var cardno = /^(?:4[4-7][0-9]{13})$/;
+  var mastercard = /^(?:5[1-5][0-9]{14})$/;
+ 
+ if(x==""){
+ 
+ alert("Please fill every fields");
+ }
+ 
+ else if(inputtxt.value.match(cardno))
+        {
+      alert("you entered a visa card");
+	  document.form1.action = "process.html";
+        }
+      else if(inputtxt.value.match(mastercard))
+        {
+        alert("you entered a mastercard");
+		document.form1.action = "process.html";
+        }
+		
+		else{
+		
+		alert("invalid credit card number");
+		}
+}
+
+</script>   
+</head><body onload='document.form1.text1.focus()'>
+<center> <h1>payment info</h1><br><br></center>
+<div class="mail">
+<form name="form1">
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+    
+          
+            <label for="cname">Name</label>
+            <input type="text" id="cname" name="text2" placeholder="Kasun Bandara" required>
+            <label for="ccnum">Card number</label>
+            <input type="text" id="cnum" name="text1" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Date</label><br>
+            <input type="month" id="expdate" name="text3" placeholder="September" required><br><br>
+			<label for="cvv">CVV</label>
+            <input type="text" maxlength="3" id="cvv" name="cvv" placeholder="123" required>
+ <center>
+<class="submit"><input type="submit" name="submit" value="Submit" onclick="cardnumber(document.form1.text1)" class="btn"/></li>
+
+</form>
+</div>
+
+</body>
+</html>
